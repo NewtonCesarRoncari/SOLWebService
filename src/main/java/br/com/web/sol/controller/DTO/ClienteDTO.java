@@ -2,9 +2,12 @@ package br.com.web.sol.controller.DTO;
 
 import br.com.web.sol.model.Cliente;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class ClienteDTO {
 
-    private Long id;
+    private String id;
     private String clientName;
     private String clientTel;
     private String clientAddress;
@@ -16,7 +19,7 @@ public class ClienteDTO {
         this.clientAddress = cliente.getClientName();
     }
 
-    public Long getId ( ) {
+    public String getId ( ) {
         return id;
     }
 
@@ -30,5 +33,9 @@ public class ClienteDTO {
 
     public String getClientAddress ( ) {
         return clientAddress;
+    }
+
+    public static List<ClienteDTO> converter ( List<Cliente> clientes ) {
+        return clientes.stream().map(ClienteDTO::new).collect(Collectors.toList());
     }
 }

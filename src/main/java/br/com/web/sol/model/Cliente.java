@@ -1,23 +1,25 @@
 package br.com.web.sol.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Cliente {
 
-    @Id @GeneratedValue
-    private Long id;
+    @Id
+    private String id;
     private String clientName;
     private String clientTel;
     private String clientAddress;
 
-    public Long getId() {
+    public Cliente ( ) {
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -45,10 +47,8 @@ public class Cliente {
         this.clientAddress = clientAddress;
     }
 
-    public Cliente ( ) {
-    }
-
-    public Cliente (String clientName, String clientTel, String clientAddress ) {
+    public Cliente (String id, String clientName, String clientTel, String clientAddress) {
+        this.id = id;
         this.clientName = clientName;
         this.clientTel = clientTel;
         this.clientAddress = clientAddress;

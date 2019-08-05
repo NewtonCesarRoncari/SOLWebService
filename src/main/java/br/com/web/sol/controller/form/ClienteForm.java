@@ -4,14 +4,25 @@ import br.com.web.sol.model.Cliente;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClienteForm {
 
+    @NotNull
+    private String id;
     @NotNull @NotEmpty
     private String clientName;
     private String clientTel;
     private String clientAddress;
 
+    public String getId ( ) {
+        return id;
+    }
+
+    public void setId ( String id ) {
+        this.id = id;
+    }
 
     public String getClientName() {
         return clientName;
@@ -38,6 +49,15 @@ public class ClienteForm {
     }
 
     public Cliente converter () {
-        return new Cliente(clientName,clientTel, clientAddress);
+        return new Cliente(id, clientName,clientTel, clientAddress);
+    }
+
+    public List<Cliente> converterListaClientes(List<ClienteForm> forms){
+        List<Cliente> clientes = new ArrayList<>();
+        forms.forEach( clienteForm -> {
+            Cliente cliente = clienteForm.converter();
+            clientes.add(cliente);
+        });
+        return clientes;
     }
 }
