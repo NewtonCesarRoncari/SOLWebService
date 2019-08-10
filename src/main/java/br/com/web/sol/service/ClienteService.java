@@ -16,13 +16,22 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
+    public void saveClient ( Cliente cliente ) {
+        clienteRepository.save(cliente);
+    }
+
+    public Cliente atualizar ( Long id, @Valid UpdateClienteForm form ) {
+        var cliente = form.atualizar(id, clienteRepository);
+        return cliente;
+    }
+
+    public void deleteById ( Long id ) {
+        clienteRepository.deleteById(id);
+    }
+
     public List<Cliente> findAllClients ( ) {
         List<Cliente> clientes = clienteRepository.findAll();
         return clientes;
-    }
-
-    public void saveClient ( Cliente cliente ) {
-        clienteRepository.save(cliente);
     }
 
     public Optional<Cliente> findById ( Long id ) {
@@ -32,14 +41,5 @@ public class ClienteService {
 
     public void saveAll ( List<Cliente> clientes ) {
         clienteRepository.saveAll(clientes);
-    }
-
-    public void deleteById ( Long id ) {
-        clienteRepository.deleteById(id);
-    }
-
-    public Cliente atualizar ( Long id, @Valid UpdateClienteForm form ) {
-        var cliente = form.atualizar(id, clienteRepository);
-        return cliente;
     }
 }

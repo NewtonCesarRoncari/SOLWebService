@@ -54,8 +54,4 @@ public class Cliente {
         this.clientAddress = clientAddress;
     }
 
-    @Override
-    public String toString() {
-        return clientName;
-    }
 }

@@ -23,18 +23,12 @@ public class ClienteController {
         this.clienteService = clienteService;
     }
 
-    @GetMapping
-    public List<ClienteDTO> listaClientes(){
-        List<Cliente> clientes = clienteService.findAllClients();
-        return ClienteDTO.converter(clientes);
-    }
-
-    @PostMapping
+    @PostMapping()
     @Transactional
     public ResponseEntity<?> cadastrarCliente( @RequestBody @Valid ClienteForm clienteForm){
         var cliente = clienteForm.converter();
-            clienteService.saveClient(cliente);
-            return ResponseEntity.ok().build();
+        clienteService.saveClient(cliente);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/{id}")
@@ -45,15 +39,6 @@ public class ClienteController {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
-
-    @PostMapping("/clientes")
-    @Transactional
-    public ResponseEntity<?> cadastrarListaClientes ( @RequestBody @Valid List<ClienteForm> listClienteForm){
-        var forms = new ClienteForm();
-        List<Cliente> clientes = forms.converterListaClientes(listClienteForm);
-        clienteService.saveAll(clientes);
-        return ResponseEntity.ok().build();
     }
 
     @PutMapping("/{id}")
@@ -78,6 +63,21 @@ public class ClienteController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/clientes")
+    public List<ClienteDTO> listaClientes(){
+        List<Cliente> clientes = clienteService.findAllClients();
+        return ClienteDTO.converter(clientes);
+    }
+
+    @PostMapping("/clientes")
+    @Transactional
+    public ResponseEntity<?> cadastrarListaClientes ( @RequestBody List<ClienteForm> listClienteForm){
+        var forms = new ClienteForm();
+        List<Cliente> clientes = forms.converterListaClientes(listClienteForm);
+        clienteService.saveAll(clientes);
+        return ResponseEntity.ok().build();
     }
 
 }
