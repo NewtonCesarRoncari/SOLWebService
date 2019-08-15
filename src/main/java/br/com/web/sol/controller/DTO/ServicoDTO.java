@@ -7,38 +7,38 @@ import java.util.stream.Collectors;
 
 public class ServicoDTO {
 
-    private String idServico;
-    private String descricao;
-    private Double valor;
+    private String id;
+    private String description;
+    private Double value;
 
     public ServicoDTO ( Servico servico ) {
-        this.idServico = servico.getId();
-        this.descricao = servico.getDescricao();
-        this.valor = servico.getValor();
+        this.id = servico.getId();
+        this.description = servico.getDescription();
+        this.value = servico.getValue();
     }
 
-    public String getIdServico ( ) {
-        return idServico;
+    public String getId ( ) {
+        return id;
     }
 
-    public void setIdServico ( String idServico ) {
-        this.idServico = idServico;
+    public void setId ( String id ) {
+        this.id = id;
     }
 
-    public String getDescricao ( ) {
-        return descricao;
+    public String getDescription ( ) {
+        return description;
     }
 
-    public void setDescricao ( String descricao ) {
-        this.descricao = descricao;
+    public void setDescription ( String description ) {
+        this.description = description;
     }
 
-    public Double getValor ( ) {
-        return valor;
+    public Double getValue ( ) {
+        return value;
     }
 
-    public void setValor ( Double valor ) {
-        this.valor = valor;
+    public void setValue ( Double value ) {
+        this.value = value;
     }
 
     public static List<ServicoDTO> converter ( List<Servico> servicos ) {

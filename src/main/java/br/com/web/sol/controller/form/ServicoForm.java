@@ -10,38 +10,38 @@ import java.util.List;
 public class ServicoForm {
 
     @NotNull
-    private String idServico;
+    private String id;
     @NotNull @NotEmpty
-    private String descricao;
+    private String description;
     @NotNull @NotEmpty
-    private Double valor;
+    private Double value;
 
-    public String getIdServico ( ) {
-        return idServico;
+    public String getId ( ) {
+        return id;
     }
 
-    public void setIdServico ( String idServico ) {
-        this.idServico = idServico;
+    public void setId ( String id ) {
+        this.id = id;
     }
 
-    public String getDescricao ( ) {
-        return descricao;
+    public String getDescription ( ) {
+        return description;
     }
 
-    public void setDescricao ( String descricao ) {
-        this.descricao = descricao;
+    public void setDescription ( String description ) {
+        this.description = description;
     }
 
-    public Double getValor ( ) {
-        return valor;
+    public Double getValue ( ) {
+        return value;
     }
 
-    public void setValor ( Double valor ) {
-        this.valor = valor;
+    public void setValue ( Double value ) {
+        this.value = value;
     }
 
     public Servico converter ( ) {
-        return new Servico(idServico, descricao, valor);
+        return new Servico(id, description, value);
     }
 
     public List<Servico> converterListaServico ( List<ServicoForm> forms ) {

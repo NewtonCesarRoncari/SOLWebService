@@ -13,8 +13,12 @@ import java.util.Optional;
 @Service
 public class ClienteService {
 
-    @Autowired
     private ClienteRepository clienteRepository;
+
+    @Autowired
+    public ClienteService ( ClienteRepository clienteRepository ) {
+        this.clienteRepository = clienteRepository;
+    }
 
     public void saveClient ( Cliente cliente ) {
         clienteRepository.save(cliente);

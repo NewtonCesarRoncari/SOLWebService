@@ -8,50 +8,50 @@ public class Cliente {
 
     @Id
     private String id;
-    private String clientName;
-    private String clientTel;
-    private String clientAddress;
+    private String name;
+    private String tel;
+    private String adress;
 
     public Cliente ( ) {
     }
 
-    public String getId() {
+    public String getId ( ) {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId ( String id ) {
         this.id = id;
     }
 
-    public String getClientName() {
-        return clientName;
+    public String getName ( ) {
+        return name;
     }
 
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
+    public void setName ( String name ) {
+        this.name = name;
     }
 
-    public String getClientTel() {
-        return clientTel;
+    public String getTel ( ) {
+        return tel;
     }
 
-    public void setClientTel(String clientTel) {
-        this.clientTel = clientTel;
+    public void setTel ( String tel ) {
+        this.tel = tel;
     }
 
-    public String getClientAddress() {
-        return clientAddress;
+    public String getAdress ( ) {
+        return adress;
     }
 
-    public void setClientAddress(String clientAddress) {
-        this.clientAddress = clientAddress;
+    public void setAdress ( String adress ) {
+        this.adress = adress;
     }
 
-    public Cliente (String id, String clientName, String clientTel, String clientAddress) {
+    public Cliente ( String id, String name, String tel, String adress ) {
         this.id = id;
-        this.clientName = clientName;
-        this.clientTel = clientTel;
-        this.clientAddress = clientAddress;
+        this.name = name;
+        this.tel = tel;
+        this.adress = adress;
     }
 
 }

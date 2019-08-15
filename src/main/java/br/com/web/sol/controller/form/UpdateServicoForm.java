@@ -9,30 +9,30 @@ import javax.validation.constraints.NotNull;
 public class UpdateServicoForm {
 
     @NotNull @NotEmpty
-    private String descricao;
+    private String description;
     @NotNull @NotEmpty
-    private Double valor;
+    private Double value;
 
-    public String getDescricao ( ) {
-        return descricao;
+    public String getDescription ( ) {
+        return description;
     }
 
-    public void setDescricao ( String descricao ) {
-        this.descricao = descricao;
+    public void setDescription ( String description ) {
+        this.description = description;
     }
 
-    public Double getValor ( ) {
-        return valor;
+    public Double getValue ( ) {
+        return value;
     }
 
-    public void setValor ( Double valor ) {
-        this.valor = valor;
+    public void setValue ( Double value ) {
+        this.value = value;
     }
 
     public Servico atualizar ( Long id, ServicoRepository servicoRepository ) {
         Servico servico = servicoRepository.getOne(id);
-        servico.setDescricao(this.descricao);
-        servico.setValor(this.valor);
+        servico.setDescription(this.description);
+        servico.setValue(this.value);
 
         return servico;
     }

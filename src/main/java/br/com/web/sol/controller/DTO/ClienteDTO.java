@@ -8,31 +8,31 @@ import java.util.stream.Collectors;
 public class ClienteDTO {
 
     private String id;
-    private String clientName;
-    private String clientTel;
-    private String clientAddress;
+    private String name;
+    private String tel;
+    private String adress;
 
     public ClienteDTO ( Cliente cliente) {
         this.id = cliente.getId();
-        this.clientName = cliente.getClientName();
-        this.clientTel = cliente.getClientTel();
-        this.clientAddress = cliente.getClientName();
+        this.name = cliente.getName();
+        this.tel = cliente.getTel();
+        this.adress = cliente.getAdress();
     }
 
     public String getId ( ) {
         return id;
     }
 
-    public String getClientName ( ) {
-        return clientName;
+    public String getName ( ) {
+        return name;
     }
 
-    public String getClientTel ( ) {
-        return clientTel;
+    public String getTel ( ) {
+        return tel;
     }
 
-    public String getClientAddress ( ) {
-        return clientAddress;
+    public String getAdress ( ) {
+        return adress;
     }
 
     public static List<ClienteDTO> converter ( List<Cliente> clientes ) {

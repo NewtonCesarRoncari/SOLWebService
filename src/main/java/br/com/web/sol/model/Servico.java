@@ -8,8 +8,8 @@ public class Servico {
 
     @Id
     private String id;
-    private String descricao;
-    private Double valor;
+    private String description;
+    private Double value;
 
     public Servico ( ) {
     }
@@ -22,26 +22,26 @@ public class Servico {
         this.id = id;
     }
 
-    public String getDescricao ( ) {
-        return descricao;
+    public String getDescription ( ) {
+        return description;
     }
 
-    public void setDescricao ( String descricao ) {
-        this.descricao = descricao;
+    public void setDescription ( String description ) {
+        this.description = description;
     }
 
-    public Double getValor ( ) {
-        return valor;
+    public Double getValue ( ) {
+        return value;
     }
 
-    public void setValor ( Double valor ) {
-        this.valor = valor;
+    public void setValue ( Double value ) {
+        this.value = value;
     }
 
-    public Servico ( String id, String descricao, Double valor ) {
+    public Servico ( String id, String description, Double value ) {
         this.id = id;
-        this.descricao = descricao;
-        this.valor = valor;
+        this.description = description;
+        this.value = value;
     }
 
 }

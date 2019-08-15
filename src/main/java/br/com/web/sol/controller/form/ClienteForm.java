@@ -12,9 +12,9 @@ public class ClienteForm {
     @NotNull
     private String id;
     @NotNull @NotEmpty
-    private String clientName;
-    private String clientTel;
-    private String clientAddress;
+    private String name;
+    private String tel;
+    private String adress;
 
     public String getId ( ) {
         return id;
@@ -24,32 +24,32 @@ public class ClienteForm {
         this.id = id;
     }
 
-    public String getClientName() {
-        return clientName;
+    public String getName () {
+        return name;
     }
 
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
+    public void setName ( String name ) {
+        this.name = name;
     }
 
-    public String getClientTel() {
-        return clientTel;
+    public String getTel () {
+        return tel;
     }
 
-    public void setClientTel(String clientTel) {
-        this.clientTel = clientTel;
+    public void setTel ( String tel ) {
+        this.tel = tel;
     }
 
-    public String getClientAddress() {
-        return clientAddress;
+    public String getAdress () {
+        return adress;
     }
 
-    public void setClientAddress(String clientAddress) {
-        this.clientAddress = clientAddress;
+    public void setAdress ( String adress ) {
+        this.adress = adress;
     }
 
     public Cliente converter () {
-        return new Cliente(id, clientName,clientTel, clientAddress);
+        return new Cliente(id, name, tel, adress);
     }
 
     public List<Cliente> converterListaClientes(List<ClienteForm> forms){
